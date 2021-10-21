@@ -136,5 +136,7 @@ private Size GetTextHeight(string dataText)
 }
 ```
 
+KB article - [How to resize the row based on the Height of multi line textbox entry in WPF DataGrid (SfDataGrid)?](https://www.syncfusion.com/kb/9354/how-to-resize-the-row-based-on-the-height-of-multi-line-textbox-entry-in-wpf-datagrid)
+
 ## Requirements to run the demo
 Visual Studio 2015 and above versions
