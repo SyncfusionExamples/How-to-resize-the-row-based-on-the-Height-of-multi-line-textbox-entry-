@@ -1,6 +1,6 @@
 # How to Resize the Row Based on the Height of Multi-line TextBox Entry in WPF DataGrid?
 
-This example illustrates how to resize the row based on the height of multi-line textbox entry in [WPF DataGrid](https://www.syncfusion.com/wpf-ui-controls/datagrid) (SfDataGrid).
+This example illustrates how to resize the row based on the height of multi-line textbox entry in [WPF DataGrid](https://www.syncfusion.com/wpf-controls/datagrid) (SfDataGrid).
 
 You can automatically increase the height of a row when typing multiline text in the text box of [GridTemplateColumn](https://help.syncfusion.com/cr/wpf/Syncfusion.UI.Xaml.Grid.GridTemplateColumn.html) using the [QueryRowHeight](https://help.syncfusion.com/cr/wpf/Syncfusion.UI.Xaml.Grid.SfDataGrid.html#Syncfusion_UI_Xaml_Grid_SfDataGrid_QueryRowHeight) event in DataGrid.
 
