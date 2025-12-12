@@ -1,13 +1,12 @@
-# How to resize the row based on the Height of multi line textbox entry in WPF DataGrid (SfDataGrid)?
+# How to Resize the Row Based on the Height of Multi-line TextBox Entry in WPF DataGrid?
 
-## About the sample
+This example illustrates how to resize the row based on the height of multi-line textbox entry in [WPF DataGrid](https://www.syncfusion.com/wpf-controls/datagrid) (SfDataGrid).
 
-This example illustrates how to resize the row based on the Height of multi line textbox entry in [WPF DataGrid](https://www.syncfusion.com/wpf-ui-controls/datagrid) (SfDataGrid)?	
+You can automatically increase the height of a row when typing multiline text in the text box of [GridTemplateColumn](https://help.syncfusion.com/cr/wpf/Syncfusion.UI.Xaml.Grid.GridTemplateColumn.html) using the [QueryRowHeight](https://help.syncfusion.com/cr/wpf/Syncfusion.UI.Xaml.Grid.SfDataGrid.html#Syncfusion_UI_Xaml_Grid_SfDataGrid_QueryRowHeight) event in DataGrid.
 
-You can automatically increase the height of a row when typing multiline text in the text box of [GridTemplateColumn](https://help.syncfusion.com/cr/wpf/Syncfusion.UI.Xaml.Grid.GridTemplateColumn.html) using the [QueryRowHeight](https://help.syncfusion.com/cr/wpf/Syncfusion.UI.Xaml.Grid.SfDataGrid.html#Syncfusion_UI_Xaml_Grid_SfDataGrid_QueryRowHeight) event in [WPF DataGrid](https://www.syncfusion.com/wpf-ui-controls/datagrid) (SfDataGrid).
+In the sample, the height of a row is increased after editing the text box of `GridTemplateColumn`.
 
-
-In the sample, the height of a row is increased after editing the text box of GridTemplateColumn.
+#### XAML
 
 ```XML
 <syncfusion:SfDataGrid x:Name="grid"
@@ -44,6 +43,8 @@ In the sample, the height of a row is increased after editing the text box of Gr
 </syncfusion:SfDataGrid>
 ```
 
+#### C#
+
 ```C#
 datagrid.QueryRowHeight += datagrid_QueryRowHeight;
   
@@ -65,7 +66,7 @@ private void datagrid_QueryRowHeight(object sender, QueryRowHeightEventArgs e)
 }
 ```
 
-The CurrentCellValueChanged event will be triggered when editing a particular cell. So, you can change the row height by calling the SfDataGrid.InvalidateRowHeight and VisualContainer.InvalidateMeasureInfo methods.
+The `CurrentCellValueChanged` event will be triggered when editing a particular cell. So, you can change the row height by calling the `SfDataGrid.InvalidateRowHeight` and `VisualContainer.InvalidateMeasureInfo` methods.
 
 ```C#
 datagrid.CurrentCellValueChanged += datagrid_CurrentCellValueChanged;
@@ -73,12 +74,11 @@ datagrid.CurrentCellValueChanged += datagrid_CurrentCellValueChanged;
 private void datagrid_CurrentCellValueChanged(object sender, CurrentCellValueChangedEventArgs args)
 {
     datagrid.InvalidateRowHeight(args.RowColumnIndex.RowIndex);
-  
     datagrid.GetVisualContainer().InvalidateMeasureInfo();
 }
 ```
 
-You can measure the text height when editing the text box of GridTemplateColumn using the GridColumnSizer.MeasureTemplate method.
+You can measure the text height when editing the text box of GridTemplateColumn using the `GridColumnSizer.MeasureTemplate` method.
 
 ```C#
 public class GridColumnAutoSizerExt : GridColumnSizer
@@ -111,9 +111,9 @@ In WPF, you can get the formatted text height by using the following code snippe
 ```C#
 private FormattedText GetFormattedText(GridColumn column, object record, string datatext)
 {
-        FormattedText formattedtext;
-        formattedtext = new FormattedText(datatext, System.Globalization.CultureInfo.CurrentCulture, FlowDirection.LeftToRight, new Typeface(DataGrid.FontFamily, new FontStyle(), FontWeights.Normal, DataGrid.FontStretch), DataGrid.FontSize, Brushes.Black);
-        return formattedtext;  
+    FormattedText formattedtext;
+    formattedtext = new FormattedText(datatext, System.Globalization.CultureInfo.CurrentCulture, FlowDirection.LeftToRight, new Typeface(DataGrid.FontFamily, new FontStyle(), FontWeights.Normal, DataGrid.FontStretch), DataGrid.FontSize, Brushes.Black);
+    return formattedtext;  
 }
 ```
 
@@ -135,8 +135,3 @@ private Size GetTextHeight(string dataText)
     return defaultFormattedText;
 }
 ```
-
-KB article - [How to resize the row based on the Height of multi line textbox entry in WPF DataGrid (SfDataGrid)?](https://www.syncfusion.com/kb/9354/how-to-resize-the-row-based-on-the-height-of-multi-line-textbox-entry-in-wpf-datagrid)
-
-## Requirements to run the demo
-Visual Studio 2015 and above versions
